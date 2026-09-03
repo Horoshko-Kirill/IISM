@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Test.Task3">
+    <ContentPage.Content>
+        
+         <ScrollView>
+            <VerticalStackLayout
+                Spacing="15"
+                Padding="20">
+                
+                <Label 
+                    Text="Task3"
+                    FontSize="28"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    TextColor="Blue" />
+                
+                <Label 
+                    x:Name="StatusLabel"
+                    Text="Готов к работе"
+                    FontSize="16"
+                    TextColor="Green"
+                    HorizontalOptions="Center" />
+                
+                <Grid ColumnDefinitions="Auto, *" RowDefinitions="Auto">
+                    <Label 
+                        Text="Вероятность (0-1) события P(A):"
+                        Grid.Column="0"
+                        VerticalOptions="Center"
+                        Margin="0,0,10,0"
+                        FontSize="16" />
+                
+                    <Entry 
+                        x:Name="ProbabilityEntryA"
+                        Grid.Column="1"
+                        Text="0.5"
+                        Keyboard="Numeric"
+                        FontSize="16"
+                        Placeholder="Например: 0.5" />
+                </Grid>
+                
+                <Grid ColumnDefinitions="Auto, *" RowDefinitions="Auto">
+                    <Label 
+                        Text="Вероятность (0-1) события P(B|A):"
+                        Grid.Column="0"
+                        VerticalOptions="Center"
+                        Margin="0,0,10,0"
+                        FontSize="16" />
+                
+                    <Entry 
+                        x:Name="ProbabilityEntryAB"
+                        Grid.Column="1"
+                        Text="0.5"
+                        Keyboard="Numeric"
+                        FontSize="16"
+                        Placeholder="Например: 0.5" />
+                </Grid>
+                
+                <Grid ColumnDefinitions="Auto, *" RowDefinitions="Auto">
+                    <Label 
+                        Text="Число тестов:"
+                        Grid.Column="0"
+                        VerticalOptions="Center"
+                        Margin="0,0,10,0"
+                        FontSize="16" />
+                
+                    <Entry 
+                        x:Name="AttemptsEntry"
+                        Grid.Column="1"
+                        Text="1000000"
+                        Keyboard="Numeric"
+                        FontSize="16"
+                        Placeholder="Например: 1000000" />
+                </Grid>
+                
+                <Button 
+                    x:Name="StartButton"
+                    Text="Запустить"
+                    Clicked="OnStartClicked"
+                    BackgroundColor="Green"
+                    TextColor="White"
+                    FontSize="18"
+                    HeightRequest="50"
+                    CornerRadius="10" />
+                
+                <Button 
+                    x:Name="ClearButton"
+                    Text="Очистить результат"
+                    Clicked="OnClearClicked"
+                    BackgroundColor="Gray"
+                    TextColor="White"
+                    FontSize="16"
+                    HeightRequest="40"
+                    CornerRadius="8" />
+                
+                <Frame 
+                    x:Name="ResultFrame"
+                    BorderColor="Red"
+                    CornerRadius="10"
+                    Padding="15"
+                    Margin="0,10,0,0"
+                    IsVisible="False">
+                
+                    <VerticalStackLayout Spacing="10">
+                        <Label 
+                            Text="РЕЗУЛЬТАТ"
+                            FontSize="18"
+                            FontAttributes="Bold"
+                            TextColor="#512BD4" />
+                    
+                        <Label 
+                            x:Name="ResultLabel"
+                            FontSize="16"
+                            TextColor="White" />
+                    </VerticalStackLayout>
+                </Frame>
+                
+            </VerticalStackLayout>
+        </ScrollView>
+        
+    </ContentPage.Content>
+</ContentPage>

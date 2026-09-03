@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Test.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Test"
+    Title="Test">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+    
+    <ShellContent
+        Title="Task1"
+        ContentTemplate="{DataTemplate local:Task1}"
+        Route="Task1" />
+    
+    <ShellContent
+        Title="Task2"
+        ContentTemplate="{DataTemplate local:Task2}"
+        Route="Task2" />
+    
+    <ShellContent
+        Title="Task3"
+        ContentTemplate="{DataTemplate local:Task3}"
+        Route="Task3" />
+    
+    <ShellContent
+        Title="Task4"
+        ContentTemplate="{DataTemplate local:Task4}"
+        Route="Task4" />
+    
+    <ShellContent
+        Title="Fortune"
+        ContentTemplate="{DataTemplate local:Fortune}"
+        Route="Fortune" />
+
+</Shell>
