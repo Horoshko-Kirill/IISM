@@ -5,7 +5,129 @@
              x:Class="Test.Fortune">
     <ContentPage.Content>
         
-        
+        <ScrollView>
+            <VerticalStackLayout
+                Spacing="15"
+                Padding="20">
+                
+                <Label 
+                    Text="Task4"
+                    FontSize="28"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    TextColor="Blue" />
+                
+                <Label 
+                    x:Name="StatusLabel"
+                    Text="Готов к работе"
+                    FontSize="16"
+                    TextColor="Green"
+                    HorizontalOptions="Center" />
+                
+                <Button 
+                    x:Name="StartButton"
+                    Text="Запустить"
+                    Clicked="OnStartClicked"
+                    BackgroundColor="Green"
+                    TextColor="White"
+                    FontSize="18"
+                    HeightRequest="50"
+                    CornerRadius="10" />
+                
+                <Grid ColumnDefinitions="*,*,*,*,*" ColumnSpacing="10" Margin="0,40,0,40" Padding="10">
+                    <Label 
+                        Text="Название игры:"
+                        Grid.Column="0"
+                        VerticalOptions="Center"
+                        FontSize="16" />
+                    
+                    <Entry 
+                        Grid.Column="1"
+                        x:Name="AddNameGame"
+                        Text=""
+                        Keyboard="Numeric"
+                        FontSize="16"
+                        Placeholder="Например: Clash Royal" />
+                    
+                    <Label 
+                        Text="Донат:"
+                        Grid.Column="2"
+                        VerticalOptions="Center"
+                        FontSize="16" />
+                                
+                    <Entry 
+                        Grid.Column="3"
+                        x:Name="AddDonat"
+                        Text=""
+                        Keyboard="Numeric"
+                        FontSize="16"
+                        Placeholder="Например: 1000" />
+                    
+                    <Button 
+                        x:Name="AddRowButton"
+                        Grid.Column="4"
+                        Text="Добавить"
+                        Clicked="OnAddRawClicked"
+                        BackgroundColor="Blue"
+                        TextColor="White"
+                        FontSize="18"
+                        HeightRequest="50"
+                        CornerRadius="10" />
+                </Grid>
+                
+                <CollectionView ItemsSource="{Binding ProbabilityRows}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid ColumnDefinitions="*, *, *, *, *" ColumnSpacing="10" Margin="0,40,0,40" Padding="10">
+                                <Label 
+                                    Text="Название игры:"
+                                    Grid.Column="0"
+                                    VerticalOptions="Center"
+                                    FontSize="16" />
+                    
+                                <Label
+                                    Grid.Column="1"
+                                    Text="{Binding NameGame}"
+                                    FontSize="16"/>
+                    
+                                <Label 
+                                    Text="Донат:"
+                                    Grid.Column="2"
+                                    VerticalOptions="Center"
+                                    FontSize="16" />
+                                
+                                <Label
+                                    Grid.Column="3"
+                                    Text="{Binding Donat}"
+                                    FontSize="16"/>
+                                
+                                <Button 
+                                    Grid.Column="4"
+                                    Text="Удалить"
+                                    Clicked="OnDeleteRawClicked"
+                                    BackgroundColor="Red"
+                                    TextColor="White"
+                                    FontSize="18"
+                                    HeightRequest="30"
+                                    CornerRadius="10" />
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                
+                <Button 
+                    x:Name="ClearButton"
+                    Text="Очистить результат"
+                    Clicked="OnClearClicked"
+                    BackgroundColor="Gray"
+                    TextColor="White"
+                    FontSize="16"
+                    HeightRequest="40"
+                    CornerRadius="8" />
+                
+                
+            </VerticalStackLayout>
+        </ScrollView>
         
     </ContentPage.Content>
 </ContentPage>
